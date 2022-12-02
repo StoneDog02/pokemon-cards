@@ -1,0 +1,437 @@
+body {
+  background-color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardBackgroundOuter {
+  height: 880px;
+  width: 630px;
+  background: #ffe165;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardBackgroundInner.fire {
+  --main-bg-color: hsl(25deg 95% 64%);
+  --gradiant-from: rgb(236, 86, 65);
+  --gradiant-to: rgb(236, 86, 65);
+}
+
+.cardBackgroundInner.water {
+  --main-bg-color: hsl(204deg 95% 64%);
+  --gradiant-from: rgb(65, 70, 236);
+  --gradiant-to: rgb(65, 70, 236);
+}
+
+.cardBackgroundInner.grass {
+  --main-bg-color: hsl(94deg 95% 64%);
+  --gradiant-from: rgb(65, 136, 70);
+  --gradiant-to: rgb(65, 136, 70);
+}
+
+.cardBackgroundInner {
+  height: 840px;
+  width: 590px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  border-radius: 12px;
+  /* background: #f3733f; */
+  background-image: radial-gradient(
+      circle at 92% 37%,
+      var(--main-bg-color) 10%,
+      var(--main-bg-color) 10%,
+      transparent 39%,
+      transparent 71%,
+      transparent 71%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 80% 85%,
+      var(--main-bg-color) 0%,
+      var(--main-bg-color) 10%,
+      transparent 25%,
+      transparent 67%,
+      transparent 67%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 38% 0%,
+      var(--main-bg-color) 0%,
+      var(--main-bg-color) 10%,
+      transparent 27%,
+      transparent 60%,
+      transparent 60%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      var(--main-bg-color) 0%,
+      var(--main-bg-color) 10%,
+      transparent 35%,
+      transparent 87%,
+      transparent 87%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 0% 60%,
+      var(--main-bg-color) 0%,
+      var(--main-bg-color) 5%,
+      transparent 48%,
+      transparent 87%,
+      transparent 87%,
+      transparent 10%
+    ),
+    /* radial-gradient(
+      circle at 45% 90%,
+      hsl(25deg 95% 64%) 5%,
+      hsl(25deg 95% 64%) 2%,
+      transparent 48%,
+      transparent 87%,
+      transparent 87%,
+      transparent 10%
+    ), */
+      linear-gradient(135deg, var(--gradiant-from), var(--gradiant-to));
+}
+
+.header {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerLeft,
+.headerRight {
+  display: flex;
+  align-items: center;
+}
+
+.headerRight {
+  align-items: baseline;
+  padding-top: 30px;
+}
+
+.basic {
+  font-family: "Changa", sans-serif;
+  color: #4d4d50;
+  font-size: 20px;
+  background-image: repeating-linear-gradient(
+    #eeeeee 0px 5%,
+    #c5c5c2 30px 5%,
+    #eeeeee 60px,
+    #c5c5c2 70px,
+    rgb(224, 224, 224) 288px,
+    rgb(224, 224, 224) 432px
+  );
+  box-shadow: 0 3px 10px #000000;
+  padding: 0px 8px;
+  margin-left: -10px;
+  margin-top: 12px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 30px;
+}
+
+.pokemonName {
+  font-family: "Open Sans", sans-serif;
+  font-size: 44px;
+  margin: 10px;
+  padding-top: 12px;
+  padding-left: 4px;
+}
+
+.hp {
+  font-family: "Roboto Mono", monospace;
+  font-size: 14px;
+  align-items: end;
+  /* padding-top: 40px; */
+}
+
+.hpNum {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 44px;
+  /* padding-top: 34px; */
+}
+
+.type {
+  font-size: 38px;
+  /* padding-top: 20px; */
+}
+
+.pokemonImg {
+  /* background: url(https://images.unsplash.com/photo-1601062087032-5f07e3304320?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3732&q=80)
+    no-repeat center center fixed;
+  background-size: cover; */
+  height: 340px;
+  width: 550px;
+  margin-top: 10px;
+  border: 4px solid #e8dcdc;
+  box-shadow: 2px 3px 10px 5px #000000a9;
+  margin-left: 15px;
+}
+
+.radiantRuleMain {
+  display: flex;
+  flex-direction: column;
+  background-image: repeating-linear-gradient(
+    #eeeeee 0px 5%,
+    #c5c5c2 30px 5%,
+    #eeeeee 60px,
+    #c5c5c2 70px,
+    rgb(224, 224, 224) 288px,
+    rgb(224, 224, 224) 432px
+  );
+  box-shadow: 0 3px 10px #000000;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 30px;
+  align-items: flex-start;
+  border: 2px solid #a1a2a5;
+}
+
+.radiantRuleUpper {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #a1a2a5;
+  border-radius: 50px -50px 30px 5px;
+  color: #eeeeee;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 30px;
+}
+
+.radiantRuleLower {
+  font-family: "Roboto", sans-serif;
+  padding-left: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  word-spacing: 4px;
+}
+
+.abilityBackgroundMain {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.abilityBackgroundUpper {
+  display: flex;
+}
+
+.abilityBackgroundOuter {
+  background-image: repeating-linear-gradient(#eeeeee, #6e7275 50px 33%);
+  margin-left: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-top-right-radius: 25%;
+  border-bottom-right-radius: 80%;
+  box-shadow: 0 3px 10px #000000;
+}
+
+.abilityBackgroundInner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #aa1216;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-top-right-radius: 25%;
+  border-bottom-right-radius: 80%;
+}
+
+.ability {
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+  color: #eeeeee;
+  background-color: none;
+}
+
+.abilityName {
+  color: #9a1b16;
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+  padding-left: 50px;
+  padding-top: -30px;
+}
+
+.abilityDescription {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  margin-left: 30px;
+  padding-top: 10px;
+  word-spacing: 15px;
+}
+
+.attackBackgroundMain {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+.attackBackgroundUpper {
+  display: flex;
+}
+
+.attackBackgroundLower {
+  display: flex;
+  flex-direction: column;
+}
+
+.attackLevel {
+  font-size: 40px;
+  margin-left: 20px;
+}
+
+.attackName {
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+  padding-left: 20px;
+}
+
+.attackPower {
+  font-family: "Hind", sans-serif;
+  font-size: 44px;
+  padding-left: 40px;
+}
+
+.attackDescription {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  margin-left: 30px;
+  padding-top: 5px;
+  word-spacing: 20px;
+}
+
+.weaknessMain {
+  display: flex;
+  margin-top: 20px;
+}
+
+.weaknessLeft {
+  display: flex;
+  background-image: repeating-linear-gradient(
+    #eeeeee 0px 5%,
+    #c5c5c2 30px 5%,
+    #eeeeee 60px,
+    #c5c5c2 70px,
+    rgb(224, 224, 224) 288px,
+    rgb(224, 224, 224) 432px
+  );
+  box-shadow: 0 3px 10px #000000;
+  padding: 0px 8px;
+  margin-left: -10px;
+  margin-top: 12px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 30px;
+  align-items: center;
+}
+
+.weaknessRight {
+  display: flex;
+  align-items: center;
+  background-image: repeating-linear-gradient(
+    #eeeeee 0px 5%,
+    #c5c5c2 30px 5%,
+    #eeeeee 60px,
+    #c5c5c2 70px,
+    rgb(224, 224, 224) 288px,
+    rgb(224, 224, 224) 432px
+  );
+  box-shadow: 0 3px 10px #000000;
+  padding: 0px 8px;
+  margin-left: 10px;
+  width: 220px;
+  padding-left: 10px;
+  margin-top: 12px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 30px;
+}
+
+.weakness {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+}
+
+.weaknessType {
+  font-size: 25px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.resistanceType {
+  font-size: 25px;
+  width: -webkit-fill-available;
+  padding-left: 4px;
+}
+
+.weaknessMultiplier {
+  font-family: "Hind", sans-serif;
+  font-size: 25px;
+}
+
+.resistance {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  margin-left: 50px;
+  /* margin-right: 120px; */
+  width: 150px
+}
+
+.retreat {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+}
+
+.retreatStar {
+  font-family: "Open Sans", sans-serif;
+  font-size: 25px;
+}
+
+.pokemonDescMain {
+  display: flex;
+}
+
+.pokemonDescLeft {
+  font-family: "Ubuntu", sans-serif;
+  display: flex;
+  align-items: flex-end;
+  margin-left: 50px;
+}
+
+.pokemonCardMade {
+  background-color: #eeeeee;
+  border-radius: 25px;
+  padding: 4px;
+}
+
+.pokemonDescRight {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-top: 22px;
+  margin-left: 125px;
+  margin-right: 15px;
+}
