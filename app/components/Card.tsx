@@ -1,7 +1,8 @@
 const TYPES = {
-  fire: "🔥",
-  water: "💧",
-  grass: "🌱",
+  fire: <i className="fa-solid fa-fire fire"></i>,
+  water: <i className="fa-solid fa-droplet water"></i>,
+  grass: <i className="fa-solid fa-leaf grass"></i>,
+  any: <i className="fa-solid fa-star-of-life any"></i>
 };
 
 export function Card({ card, type, id }) {
@@ -55,7 +56,7 @@ export function Card({ card, type, id }) {
               </div>
             </div>
             <div className="abilityName" id="abilityTitle-${id}">
-              {card.abilityTitle}
+            {card.abilityTitle}
             </div>
           </div>
           <div className="abilityBackgroundLower">
@@ -66,7 +67,7 @@ export function Card({ card, type, id }) {
           <div className="attackBackgroundMain">
             <div className="attackBackgroundUpper">
               <div className="attackLevel" id="attackLevel-${id}">
-                {card.attackLevel}
+                {card.attackCost.map((type) => TYPES[type])}
               </div>
               <div className="attackName" id="attackTitle-${id}">
                 {card.attackTitle}

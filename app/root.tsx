@@ -64,6 +64,7 @@ export default function App() {
       <head>
         <Meta />
         <Links />
+        <script src="https://kit.fontawesome.com/b439bcdc85.js" crossorigin="anonymous"></script>
       </head>
       <body>
         <Outlet />

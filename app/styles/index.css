@@ -98,6 +98,39 @@ body {
       linear-gradient(135deg, var(--gradiant-from), var(--gradiant-to));
 }
 
+.fa-solid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: black;
+  padding: 4px;
+  border-radius: 50%;
+  height: 36px;
+  width: 36px;
+  margin: 2px;
+}
+
+.fa-solid.fire {
+  color: #ec5643;
+  
+}
+
+.fa-solid.water {
+  color: #4146ed;
+  
+}
+
+.fa-solid.grass {
+  color: #3f8846;
+  
+}
+
+.fa-solid.any {
+  color: white;
+  
+}
+
 .header {
   height: 50px;
   width: 100%;
@@ -161,7 +194,7 @@ body {
 }
 
 .type {
-  font-size: 38px;
+  font-size: 26px;
   /* padding-top: 20px; */
 }
 
@@ -276,7 +309,8 @@ body {
   font-size: 18px;
   margin-left: 30px;
   padding-top: 10px;
-  word-spacing: 15px;
+  word-spacing: 10px;
+  margin-right: 20px;
 }
 
 .attackBackgroundMain {
@@ -287,6 +321,9 @@ body {
 
 .attackBackgroundUpper {
   display: flex;
+  /* align-items: flex-end; */
+  justify-content: space-between;
+  /* padding-left: 20px; */
 }
 
 .attackBackgroundLower {
@@ -295,20 +332,25 @@ body {
 }
 
 .attackLevel {
-  font-size: 40px;
+  font-size: 26px;
   margin-left: 20px;
+  flex: 0 0 auto;
 }
 
 .attackName {
   font-family: "Open Sans", sans-serif;
   font-size: 30px;
-  padding-left: 20px;
+  padding-left: 8px;
+  flex: 0 0 auto;
 }
 
 .attackPower {
   font-family: "Hind", sans-serif;
-  font-size: 44px;
-  padding-left: 40px;
+  font-size: 36px;
+  margin-right: 5px;
+  flex: 1 1 auto;
+  padding-right: 20px;
+  text-align: right;
 }
 
 .attackDescription {
@@ -322,6 +364,7 @@ body {
 .weaknessMain {
   display: flex;
   margin-top: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .weaknessLeft {
@@ -388,6 +431,7 @@ body {
 .weaknessMultiplier {
   font-family: "Hind", sans-serif;
   font-size: 25px;
+  width: 78px;
 }
 
 .resistance {
@@ -410,6 +454,7 @@ body {
 
 .pokemonDescMain {
   display: flex;
+  flex-wrap: nowrap;
 }
 
 .pokemonDescLeft {
@@ -417,6 +462,7 @@ body {
   display: flex;
   align-items: flex-end;
   margin-left: 50px;
+  margin-right: 60px;
 }
 
 .pokemonCardMade {
@@ -428,10 +474,13 @@ body {
 .pokemonDescRight {
   font-family: "Roboto", sans-serif;
   display: flex;
+  flex: 1 1 auto;
+  flex-wrap: nowrap;
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-end;
   margin-top: 22px;
-  margin-left: 125px;
-  margin-right: 15px;
+  margin-left: 15px;
+  margin-right: 20px;
+
 }
