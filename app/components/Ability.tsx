@@ -43,27 +43,27 @@ export function Ability({name, description}: {name: string, description: string}
 
 
 
+// DESTRUCTURING:
+// const name = "pikachu"
+// const hp = 50
 
-const name = "pikachu"
-const hp = 50
-
-const card = { name, hp }
+// const card = { name, hp }
 
 
-function takeInCard(card) {
-  const name = card.name
-  const hp = card.hp
-  console.log(`The pokemon's name is ${name}`, `The pokemon's hp is ${hp}`)
-}
-takeInCard(card)
+// function takeInCard(card) {
+//   const name = card.name
+//   const hp = card.hp
+//   console.log(`The pokemon's name is ${name}`, `The pokemon's hp is ${hp}`)
+// }
+// takeInCard(card)
 
-function takeInCardTwo(card) {
-  const {name, hp} = card
-  console.log(`The pokemon's name is ${name}`, `The pokemon's hp is ${hp}`)
-}
-takeInCardTwo(card)
+// function takeInCardTwo(card) {
+//   const {name, hp} = card
+//   console.log(`The pokemon's name is ${name}`, `The pokemon's hp is ${hp}`)
+// }
+// takeInCardTwo(card)
 
-function takeInCardThree({name, hp}) {
-  console.log(`The pokemon's name is ${name}`, `The pokemon's hp is ${hp}`)
-}
-takeInCardThree(card)
+// function takeInCardThree({name, hp}) {
+//   console.log(`The pokemon's name is ${name}`, `The pokemon's hp is ${hp}`)
+// }
+// takeInCardThree(card)
