@@ -1,3 +1,8 @@
+import { Card } from "~/theGoal";
+import { Ability } from "./Ability";
+import { Attack } from "./Attack";
+import { Radiant } from "./Radiant";
+
 const TYPES = {
   fire: <i className="fa-solid fa-fire fire"></i>,
   water: <i className="fa-solid fa-droplet water"></i>,
@@ -5,7 +10,7 @@ const TYPES = {
   any: <i className="fa-solid fa-star-of-life any"></i>
 };
 
-export function Card({ card, type, id }) {
+export function Card({ card, id }: {card:Card, id:number}) {
 
   
   return (
@@ -14,7 +19,7 @@ export function Card({ card, type, id }) {
         <div className="header">
           <div className="headerLeft">
             <div className="basic" id="basic-${id}">
-              {card.basic} BASIC
+              BASIC
             </div>
             <div className="pokemonName" id={`pokemonName-${id}`}>
               {card.name}
@@ -38,62 +43,21 @@ export function Card({ card, type, id }) {
         }}
         className="pokemonImg" id="image-${id}">
         </div>
-        <div className="radiantRuleMain">
-          <div className="radiantRuleUpper" id="radiantHeader-${id}">
-            {card.radiantHeader}
-          </div>
-          <div className="radiantRuleLower" id="radiantRule-${id}">
-            {card.radiantRule}
-          </div>
-        </div>
-        <div className="abilityBackgroundMain">
-          <div className="abilityBackgroundUpper">
-            <div className="abilityBackgroundOuter">
-              <div className="abilityBackgroundInner">
-                <div className="ability" id="abilityFrame-${id}">
-                  {card.ability} Ability
-                </div>
-              </div>
-            </div>
-            <div className="abilityName" id="abilityTitle-${id}">
-            {card.abilityTitle}
-            </div>
-          </div>
-          <div className="abilityBackgroundLower">
-            <div className="abilityDescription" id="abilityExplanation-${id}">
-              {card.abilityExplanation}
-            </div>
-          </div>
-          <div className="attackBackgroundMain">
-            <div className="attackBackgroundUpper">
-              <div className="attackLevel" id="attackLevel-${id}">
-                {card.attackCost.map((type) => TYPES[type])}
-              </div>
-              <div className="attackName" id="attackTitle-${id}">
-                {card.attackTitle}
-              </div>
-              <div className="attackPower" id="attackPower-${id}">
-                {card.attackPower}
-              </div>
-            </div>
-            <div className="attackBackgroundLower">
-              <div className="attackDescription" id="attackExplanation-${id}">
-                {card.attackExplanation}
-              </div>
-            </div>
-          </div>
+        {card.isRadiant &&<Radiant />}
+        {card.abilities?.map(({name, description}) => <Ability name={name} description={description} />)}
+        {card.attacks?.map(({cost, name, power, description}) => <Attack cost={cost} name={name} power={power} description={description} />)}
           <div className="weaknessMain">
             <div className="weaknessLeft">
               <div className="weakness" id="weakness-${id}">
-                {card.weakness}
+                weakness
               </div>
               <div className="weaknessType" id="weaknessType-${id}">
-                {card.weaknessType}
+              {card.weaknessType}
               </div>
               <div className="weaknessMultiplier" id="weaknessMultiplier-${id}" dangerouslySetInnerHTML={{ __html: card.weaknessMultiplier}}>
               </div>
               <div className="resistance" id="resistance-${id}">
-                {card.resistance}
+                resistance
               </div>
               <div className="resistanceType">
                 {card.resistanceType}
@@ -101,10 +65,10 @@ export function Card({ card, type, id }) {
             </div>
             <div className="weaknessRight">
               <div className="retreat" id="retreat-${id}">
-                {card.retreat}
+                retreat
               </div>
               <div className="retreatStar" id="retreatLevel-${id}">
-                {card.retreatLevel}
+                {card.retreatCost}
               </div>
             </div>
           </div>
@@ -116,15 +80,14 @@ export function Card({ card, type, id }) {
             </div>
             <div className="pokemonDescRight">
               <div className="pokemonDescOne" id="pokemonDescUp-${id}">
-                {card.pokemonDescUp}
+                {card.pokemonDescription}
               </div>
               <div className="pokemonDescTwo" id={`pokemonDescLow-${id}`}>
-                {card.pokemonDescLow}
+                {card.pokemonDescription}
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
   );
 }

@@ -1,6 +1,7 @@
 import { json, LinksFunction, LoaderFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { Card } from "~/components/Card";
+import { RadiantSalamire, Hippounce, Herbuito } from "~/theGoal";
 
 import stylesUrl from "~/styles/index.css";
 
@@ -55,7 +56,12 @@ export const loader: LoaderFunction = async () => {
   const cards = await getCards();
   console.log(cards);
   return json({
-    cards,
+    // cards,
+    cards: [
+      RadiantSalamire,
+      Herbuito,
+      Hippounce
+    ]
     // cards: [
     //   {
     //     stage: "BASIC",
